@@ -1,12 +1,13 @@
 from flask import Flask ,render_template,request,redirect,url_for
 from flask_sqlalchemy import SQLAlchemy
+from config import ip, passowrd
 
 app = Flask(__name__)
 
 password = "newpassword"
 
 # app.config['SQLALCHEMY_DATABASE_URI'] = f'postgresql+psycopg2://{username}:{password}@localhost/{database}'
-app.config['SQLALCHEMY_DATABASE_URI'] ='postgresql+psycopg2://postgres:newpassword@127.0.0.1/quotes'
+app.config['SQLALCHEMY_DATABASE_URI'] =f'postgresql+psycopg2://postgres:{passowrd}@127.0.0.1/quotes'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']= False
 
 db = SQLAlchemy(app)
@@ -49,4 +50,4 @@ def process():
 	return redirect(url_for('index'))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True,host=ip, port=1998)
