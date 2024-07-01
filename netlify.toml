@@ -1,0 +1,8 @@
+[build]
+  publish = "build"
+  command = "pip install -r requirements.txt && python manage.py collectstatic --noinput && npm run build"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
