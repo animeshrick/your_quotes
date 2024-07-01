@@ -1,7 +1,7 @@
 venv/
 __pycache__/
 
-netlify.toml
+./netlify.toml
 
-check_network.py
-config.py
+./check_network.py
+./config.py
