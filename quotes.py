@@ -4,10 +4,6 @@ from config import ip, passowrd
 
 app = Flask(__name__)
 
-password = "newpassword"
-
-# app.config['SQLALCHEMY_DATABASE_URI'] = f'postgresql+psycopg2://{username}:{password}@localhost/{database}'
-# app.config['SQLALCHEMY_DATABASE_URI'] =f'postgresql+psycopg2://postgres:{passowrd}@127.0.0.1/quotes'
 app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://app:2v01Vrqz46V4K2O20cc1dRfq@incredibly-genuine-puma.a1.pgedge.io/testdb?sslmode=require"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']= False
 
@@ -51,4 +47,4 @@ def process():
 	return redirect(url_for('index'))
 
 if __name__ == '__main__':
-    app.run(debug=True,host=ip, port=1998)
+    app.run(host=ip, port=1998)
